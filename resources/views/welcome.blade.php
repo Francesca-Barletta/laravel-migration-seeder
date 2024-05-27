@@ -25,14 +25,14 @@
    
 @foreach($trains as $train)
     <tr> 
-      <td>{{ $train['azienda'] }}</td>
-      <td>{{ $train['data_di_partenza'] }}</td>
-      <td>{{ $train['stazione_di_partenza'] }}</td>
-      <td>{{ $train['stazione_di_arrivo'] }}</td>
-      <td>{{ $train['orario_di_partenza'] }}</td>
-      <td>{{ $train['orario_di_arrivo'] }}</td>
-      <td>{{ $train['codice_treno'] }}</td>
-      <td>{{ $train['numero_carrozze'] }}</td>
+      <td>{{ $train->company }}</td>
+      <td>{{ $train->departure_date }}</td>
+      <td>{{ $train->departure_station }}</td>
+      <td>{{ $train->arrival_station }}</td>
+      <td>{{ $train->departure_time }}</td>
+      <td>{{ $train->arrival_time }}</td>
+      <td>{{ $train->train_code}}</td>
+      <td>{{ $train->carriages }}</td>
     </tr>
 @endforeach
 
