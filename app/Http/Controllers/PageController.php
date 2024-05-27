@@ -10,7 +10,7 @@ class PageController extends Controller
 {
     public function home(){
 
-        $trains = Train::where('departure_date', Carbon::today())->get();
+        $trains = Train::whereDate('departure_time', today())->get();
      
         return view('welcome', compact('trains'));
     }

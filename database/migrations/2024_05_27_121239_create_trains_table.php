@@ -16,35 +16,14 @@ return new class extends Migration
             $table->string('company', 255);
             $table->string('departure_station', 255);
             $table->string('arrival_station', 255);
-            $table->date('departure_date')->nullable()->default(null);
-            $table->date('arrival_date')->nullable()->default(null);
-            
-            $table->timestamp('departure_time')->nullable()->default(null);
-            $table->timestamp('arrival_time')->nullable()->default(null);
-            
+            $table->datetime('departure_time')->nullable();
+            $table->datetime('arrival_time')->nullable();
             $table->string('train_code', 7)->nullable()->default(null);
             $table->tinyinteger('carriages')->default(0);
             $table->boolean('in_time')->default(true);
             $table->boolean('is_delete')->default(false);
             $table->timestamps();
 
-            /*
-            create table `trains` (
-                `id` bigint unsigned not null auto_increment primary key,
-                `company` varchar(255) not null,
-                `departure_station` varchar(255) not null,
-                `arrival_station` varchar(255) not null, 
-                `departure_date` date not null
-                 `arrival_date` date not null,
-                 `departure_time` timestamp null,
-                 `arrival_time` timestamp null,
-                 `train_code` smallint not null auto_increment primary key,
-                 `carriages` tinyint null auto_increment primary key,
-                 `in_time` tinyint(1) not null default '1',
-                 `is_delete` tinyint(1) not null default '0',
-                 `created_at` timestamp null,
-                 `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
-            */
         });
     }
 
